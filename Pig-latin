@@ -1,0 +1,19 @@
+import sys
+
+VOWELS = 'aeiou'  # Corrected 'y' to 'u' in VOWELS
+
+while True:
+    word = input("Enter a word to get its translation in pig latin: ")
+    
+    if word[0] in VOWELS:
+        pig_latin = word + 'way'
+    else:
+        pig_latin = word[1:] + word[0] + 'ay'
+    
+    print()
+    print("Translation in Pig Latin: {}".format(pig_latin), file=sys.stderr)
+    
+    try_again = input('\n\nTry again? (Press Enter or type n to end the program) ')
+    
+    if try_again.lower() == "n":
+        sys.exit()
